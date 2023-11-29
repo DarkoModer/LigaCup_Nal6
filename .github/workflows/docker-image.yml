@@ -46,9 +46,7 @@ jobs:
 
           tags: darkomoder/slika1:latest
 
-
-
-          - name: Build and push Docker image
+      - name: Build and push Docker image
 
         uses: docker/build-push-action@v2
 
