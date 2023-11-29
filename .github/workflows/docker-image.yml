@@ -45,3 +45,19 @@ jobs:
           push: true
 
           tags: darkomoder/slika1:latest
+
+
+
+          - name: Build and push Docker image
+
+        uses: docker/build-push-action@v2
+
+        with:
+
+          context: .
+
+          file: ./Dockerfile
+
+          push: true
+
+          tags: darkomoder/slika1:${{ github.sha }}
