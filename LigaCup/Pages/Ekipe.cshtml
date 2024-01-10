@@ -1,0 +1,40 @@
+﻿@page
+@model LigaCup.Pages.EkipeModel
+@{
+
+
+	    <form method="post" id="ekipaForm">
+        <h2>Dodaj ekipo</h2>
+        <label for="imeEkipe">Ime ekipe:</label>
+        <input type="text" name="ime" required>
+
+        <label for="trener">Trener:</label>
+            <input type="text" name="trener" required>
+
+        <button type="submit">Dodaj ekipo</button>
+    </form>
+
+    <br />
+    <br />
+    <br />
+
+
+    <h2>EKIPE</h2>
+    <table class="table">
+            <thead>
+                <tr>
+                    <th>Ekipa</th>
+                    <th>Trener</th>
+
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var ekipe in Model.Ekipe) {
+                        <tr>
+                                <td>@ekipe.ime</td>
+                                <td>@ekipe.trener</td>
+                        </tr>
+            }
+            </tbody>
+    </table>
+}

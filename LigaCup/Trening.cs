@@ -1,19 +1,21 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 public class Trening {
-	private int idTrening;
-	private DateTime ura;
-	private DateTime date;
-	private string lokacija;
+    [Key]
+    public int ID_Trening { get; set; }
+    public DateTime ura { get; set; }
+    public DateTime date { get; set; }
+    public string lokacija { get; set; }
 
-	public void SetIdTrening(ref int idTrening) {
-		this.idTrening = idTrening;
+    public void SetIdTrening(ref int idTrening) {
+		this.ID_Trening = idTrening;
 	}
 	public void SetUra(ref DateTime ura) {
 		this.ura = ura;
 	}
 	public void SetDatum(ref DateTime datum) {
-		throw new System.NotImplementedException("Not implemented");
+		this.date = datum;
 	}
 	public void SetLokacija(ref string lokacija) {
 		this.lokacija = lokacija;

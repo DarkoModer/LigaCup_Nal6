@@ -1,19 +1,33 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 public class Igralec {
-	private string ime;
-	private string priimek;
-	private int zadetki;
-	private int kartoni;
-	private int letoRojstva;
+    [Key]
+    public int ID_Igralec { get; set; }
+    public string? ime { get; set; }
+    public string priimek { get; set; }
+    public int zadetki { get; set; }
+    public int kartoni { get; set; }
+    public int letoRojstva { get; set; }
 
-	public void SetZadetki(ref int zadetki) {
-		throw new System.NotImplementedException("Not implemented");
-	}
-	public void SetKartoni(ref int kartoni) {
-		this.kartoni = kartoni;
-	}
-	public bool Shrani() {
+
+    public Igralec(string ime, string priimek, int letoRojstva, int zadetki) {
+        this.ime = ime;
+        this.priimek = priimek;
+        this.letoRojstva = letoRojstva;
+        this.zadetki = zadetki;
+    }
+
+    public Igralec() { }
+
+    public void SetZadetki(int zadetki) {
+        this.zadetki = zadetki;
+    }
+
+    public void SetKartoni(int kartoni) {
+        this.kartoni = kartoni;
+    }
+    public bool Shrani() {
 		throw new System.NotImplementedException("Not implemented");
 	}
 

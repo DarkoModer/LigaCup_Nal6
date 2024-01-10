@@ -1,0 +1,2 @@
+C:\Users\Uporabnik\Desktop\FERI\2. Letnik\3. Semester\RAZVOJ IN GRADNJA INFORMACIJSKIH SISTEMOV\VAJE\Naloga 6>docker run -p 1234:80 -p 1235:443 --name zabojnik1 -d slika1  --mount source=volume1,target=/app
+0575083ac6715062ec0472932c9bfa66776a2249f6ee0bcc01d8aa2f7cd1c8ba

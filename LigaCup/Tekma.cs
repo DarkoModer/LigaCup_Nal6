@@ -1,12 +1,23 @@
 using System;
+using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 public class Tekma {
-	private int idTekme;
-	private string rezultat;
-	private string domacaEkipa;
-	private string gostujocaEkipa;
+    [Key]
+    public int ID_Tekma { get; set; }
+    public string rezultat { get; set; }
+    public string domacaEkipa { get; set; }
+    public string gostujocaEkipa { get; set; }
 
-	public void SetIdTekme(ref object idTekma_int) {
+	public Tekma(string rezultat, string domaci, string gosti) {
+		this.rezultat = rezultat;
+		this.domacaEkipa = domaci;
+		this.gostujocaEkipa = gosti;
+	}
+
+	public Tekma() { }
+
+    public void SetIdTekme(ref object idTekma_int) {
 		throw new System.NotImplementedException("Not implemented");
 	}
 	public void SetRezultat(ref string rezultat) {

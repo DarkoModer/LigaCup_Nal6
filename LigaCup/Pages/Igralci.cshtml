@@ -1,0 +1,47 @@
+﻿@page
+@model LigaCup.Pages.IgralciModel
+@{
+
+	    <form method="post" id="igralecForm">
+        <h2>Dodaj igralca</h2>
+        <label for="imeIgralca">Ime:</label>
+        <input type="text"name="ime" required>
+
+        <label for="priimekIgralca">Priimek:</label>
+        <input type="text" name="priimek" required>
+
+        <label for="letoRojstva">Leto Rojstva:</label>
+        <input type="number" name="letoRojstva" required>
+
+        <label for="zadetki">Zadetki:</label>
+        <input type="number" name="zadetki" required>
+
+        <button type="submit">Dodaj igralca</button>
+    </form>
+
+    <br />
+    <br />
+    <br />
+
+    <h2>IGRALCI</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ime</th>
+                <th>Priimek</th>
+                <th>Leto rojstva</th>
+                <th>Zadetki</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var igralec in Model.Igralci) {
+                <tr>
+                    <td>@igralec.ime</td>
+                    <td>@igralec.priimek</td>
+                    <td>@igralec.letoRojstva</td>
+                    <td>@igralec.zadetki</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

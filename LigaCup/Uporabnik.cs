@@ -1,10 +1,13 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 public class Uporabnik {
-	private string username;
-	private string geslo;
+    [Key]
+    public int ID_Uporabnik { get; set; }
+    public string username { get; set; }
+    public string geslo { get; set; }
 
-	public bool PreveriUporabniskoIme(ref string uporabnisko) {
+    public bool PreveriUporabniskoIme(ref string uporabnisko) {
 		throw new System.NotImplementedException("Not implemented");
 	}
 	public void SetUporabniskoIme(ref string username) {

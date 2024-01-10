@@ -1,7 +1,10 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 public class Razpored {
-	private String stKroga;
+    [Key]
+    public int ID_Razpored { get; set; }
+    private string stKroga;
 	private List <Tekma> tekme;
 
 	public void PoisciIzbraniKrog() {

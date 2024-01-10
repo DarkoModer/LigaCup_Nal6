@@ -1,11 +1,14 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 public class Lestvica {
-	private int idKlub;
-	private string imeKlub;
-	private int pozicija;
+    [Key]
+    public int ID_Lestvica { get; set; }
+    public int idKlub { get; set; }
+    public string imeKlub { get; set; }
+    public int pozicija { get; set; }
 
-	public void PosodobiLestvico(ref int idklub, ref string imeKlub, ref int pozicija) {
+    public void PosodobiLestvico(ref int idklub, ref string imeKlub, ref int pozicija) {
 		throw new System.NotImplementedException("Not implemented");
 	}
 

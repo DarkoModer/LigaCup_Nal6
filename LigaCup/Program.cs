@@ -1,24 +1,40 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.EntityFrameworkCore;
+using System;
 
-// Add services to the container.
-builder.Services.AddRazorPages();
+namespace LigaCup {
+    public class Program {
+        
+        private static void Main(string[] args) {
+            var builder = WebApplication.CreateBuilder(args);
 
-var app = builder.Build();
+            builder.Services.AddRazorPages();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment()) {
-    app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+
+            builder.Services.AddDbContext<LigaCupDB>(options => {
+                options.UseSqlite("Data Source=app.db");
+            });
+
+            using (var dbContext = new LigaCupDB()) {
+                dbContext.Database.EnsureCreated();
+            }
+
+            var app = builder.Build();
+
+            if (!app.Environment.IsDevelopment()) {
+                app.UseExceptionHandler("/Error");
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.MapRazorPages();
+
+            app.Run();
+        }
+    }
 }
-
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-
-app.UseRouting();
-
-app.UseAuthorization();
-
-app.MapRazorPages();
-
-app.Run();

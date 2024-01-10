@@ -1,0 +1,42 @@
+﻿@page
+@model LigaCup.Pages.TekmeModel
+@{
+    <form method="post" id="tekmeForm">
+        <h2>Dodaj tekme</h2>
+        <label for="rezultat">Rezultat:</label>
+        <input type="text" name="rezultat" required>
+
+        <label for="domaci">Domaca ekipa:</label>
+        <input type="text" name="domaci" required>
+
+        <label for="gosti">Gostujoca ekipa:</label>
+        <input type="text" name="gosti" required>
+
+
+        <button type="submit">Dodaj ekipo</button>
+    </form>
+
+    <br />
+    <br />
+    <br />
+
+    <h2>IGRALCI</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Rezultat</th>
+                <th>Domaca ekipa</th>
+                <th>Gostujoca ekipa</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var igralec in Model.Tekme) {
+                <tr>
+                    <td>@igralec.rezultat</td>
+                    <td>@igralec.domacaEkipa</td>
+                    <td>@igralec.gostujocaEkipa</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

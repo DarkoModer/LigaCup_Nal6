@@ -1,12 +1,15 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 public class Zapisnik {
-	private int stKartonov;
-	private string strelci;
-	private DateTime datumUra;
-	private int idTekme;
+    [Key]
+    public int ID_Zapisnik { get; set; }
+    public int stKartonov { get; set; }
+    public string igralecId { get; set; }
+    public DateTime datumUra { get; set; }
+    public int idTekme { get; set; }
 
-	public void GetStKartonov() {
+    public void GetStKartonov() {
 		throw new System.NotImplementedException("Not implemented");
 	}
 	public void GetRezultat() {

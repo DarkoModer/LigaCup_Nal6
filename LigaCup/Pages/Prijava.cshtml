@@ -1,0 +1,69 @@
+﻿@page
+@model Prijava
+@{
+    ViewData["Title"] = "Prijava";
+}
+<h1>@ViewData["Title"]</h1>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+
+    <form id="loginForm" action="/login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Geslo:</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="button" onclick="checkLogin()">Prijavi</button>
+    </form>
+
+    <script>
+        function checkLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "maj" && password === "maj") {
+                alert("Uspešna prijava!");
+            } else {
+                alert("Neuspešna prijava. Preverite uporabniško ime in geslo.");
+            }
+        }
+    </script>
+
+</body>
